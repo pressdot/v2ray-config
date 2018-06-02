@@ -66,6 +66,7 @@ start() {
 stop() {
   local pids=$(pgrep -f $DAEMON)
   if [ -z "$pids" ]; then
+    echo "$NAME is not running"
     RETVAL=0
     return 0
   fi
